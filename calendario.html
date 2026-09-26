@@ -3,8 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calendario de formaciones | Ana Ballester García · Abogada y mediadora</title>
+<title>Calendario Talleres JS | Ana Ballester García</title>
 <meta name="description" content="Próximas formaciones y talleres de Justicia Sistémica para abogados, mediadores y profesionales de la ayuda, en los Juzgados de Torrent (Valencia).">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calendario Talleres JS · Formaciones para profesionales">
+<meta property="og:description" content="Próximas formaciones y talleres de Justicia Sistémica para abogados, mediadores y profesionales de la ayuda, en los Juzgados de Torrent (Valencia). Plazas limitadas.">
+<meta property="og:image" content="https://www.anaballestergarcia.com/assets/formacion-2.jpg">
+<meta property="og:url" content="https://www.anaballestergarcia.com/calendario.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calendario Talleres JS · Formaciones para profesionales">
+<meta name="twitter:description" content="Próximas formaciones y talleres de Justicia Sistémica para abogados, mediadores y profesionales de la ayuda, en los Juzgados de Torrent (Valencia).">
+<meta name="twitter:image" content="https://www.anaballestergarcia.com/assets/formacion-2.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{--verde:#005B4C; --menta:#6FBA9F; --turq-1:#DBFCE7; --turq-2:#E0F4ED; --turq-3:#6DB2A0; --turq-4:#6FBAA1; --rosa:#C08A8B; --crema:#F0EBE5; --carbon:#595857; --hueso:#FBFAF7; --linea:#DDD3C8;}
@@ -26,6 +35,9 @@
      2. Pégalo dentro del <div class="dates-list"> de "Próximas fechas".
      3. Cambia solo: el día (dia), el mes (mes), el título, el horario,
         el lugar y el enlace de WhatsApp si hace falta.
+     3b. La etiqueta <span class="modalidad">PRESENCIAL</span> indica si es
+        presencial u online. Para una formación online, cambia el texto a
+        "ONLINE" y añade la clase: <span class="modalidad online">ONLINE</span>.
      4. Cuando la fecha ya haya pasado, NO la borres: muévela al bloque
         "Formaciones ya realizadas" de más abajo y añádele la clase
         "pasado" (copia un date-row de esa sección como plantilla).
@@ -41,6 +53,8 @@
   .date-badge strong{display:block; font-family:'Cormorant Garamond',serif; font-size:1.55rem; color:#fff; line-height:1.1;}
   .date-badge span{font-size:0.7rem; letter-spacing:0.06em; color:rgba(255,255,255,0.9);}
   .date-info{flex:1; min-width:200px;}
+  .modalidad{display:inline-block; background:var(--turq-1); color:var(--verde); font-size:0.68rem; font-weight:600; letter-spacing:0.06em; padding:4px 12px; border-radius:100px; margin-bottom:8px;}
+  .modalidad.online{background:var(--crema); color:var(--rosa);}
   .date-info strong{display:block; color:var(--verde); font-size:1.05rem; margin-bottom:4px;}
   .date-info span{font-size:0.9rem; color:#4a4948; display:block;}
   .date-info .linea2{margin-top:2px;}
@@ -77,8 +91,8 @@
   <span class="brand">Ana Ballester García · Formación</span>
 </header>
 <div class="wrap">
-  <h1>Próximas formaciones y talleres</h1>
-  <p class="sub">Formación para abogados, mediadores y profesionales de la ayuda en Justicia Sistémica. Plazas limitadas — escríbeme por WhatsApp para reservar la tuya.</p>
+  <h1>Talleres y formaciones de Justicia Sistémica</h1>
+  <p class="sub">Formación presencial y, próximamente, online dirigida a abogados, mediadores y profesionales de la ayuda que quieran incorporar la mirada sistémica a su práctica. Plazas limitadas: escríbeme por WhatsApp para reservar la tuya.</p>
 
   <div class="mes-block">
     <div class="mes-title">Próximas fechas</div>
@@ -87,6 +101,7 @@
       <div class="date-row">
         <div class="date-badge"><strong>20-21</strong><span>NOVIEMBRE</span></div>
         <div class="date-info">
+          <span class="modalidad">PRESENCIAL</span>
           <strong>Taller gratuito de resolución profunda de conflictos con mirada sistémica · Juzgados de Torrent</strong>
           <span>Viernes 20: de 16:30 a 20:30 h · Sábado 21: de 10:00 a 14:00 h y de 16:00 a 20:00 h</span>
           <span class="linea2">Sala de vistas, 2º piso del edificio principal · Plaza de la Libertad 3, Torrent (Valencia)</span>
@@ -97,6 +112,7 @@
       <div class="date-row">
         <div class="date-badge"><strong>16</strong><span>ENERO 2027</span></div>
         <div class="date-info">
+          <span class="modalidad">PRESENCIAL</span>
           <strong>Taller de supervisión de casos para profesionales · Juzgados de Torrent</strong>
           <span>De 10:00 a 14:00 h y de 16:00 a 19:00 h</span>
           <span class="linea2">Sala de vistas, 2º piso del edificio principal · Plaza de la Libertad 3, Torrent (Valencia)</span>
