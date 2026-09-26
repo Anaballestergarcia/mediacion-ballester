@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reserva tu plaza | Ana Ballester García</title>
+<meta name="description" content="Reserva tu plaza en los próximos talleres y formaciones de Justicia Sistémica de Ana Ballester García.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde:#005B4C;
+    --menta:#6FBA9F;
+    --turq-1:#DBFCE7;
+    --turq-2:#E0F4ED;
+    --turq-3:#6DB2A0;
+    --turq-4:#6FBAA1;
+    --rosa:#C08A8B;
+    --crema:#F0EBE5;
+    --carbon:#595857;
+    --hueso:#FBFAF7;
+    --linea:#DDD3C8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Jost',sans-serif; color:var(--carbon); background:var(--hueso); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif; font-weight:500; color:var(--verde); line-height:1.15;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+  img{max-width:100%; display:block;}
+
+  header{position:sticky; top:0; z-index:50; background:var(--hueso); border-bottom:1px solid var(--linea);}
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:18px 32px; max-width:1180px; margin:0 auto;}
+  .nav-inner-simple{display:flex; align-items:center; justify-content:space-between; padding:18px 32px; max-width:1180px; margin:0 auto;}
+  a.back{font-size:0.9rem; color:var(--verde); font-weight:500; display:inline-flex; align-items:center; gap:6px;}
+  .brand-name{font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--verde); font-weight:600;}
+  .brand-tag{font-size:0.7rem; letter-spacing:0.08em; color:var(--verde); opacity:0.7; margin-top:2px;}
+  nav ul{list-style:none; display:flex; gap:30px; align-items:center;}
+  nav a.navlink{font-size:0.95rem; color:var(--carbon);}
+  nav a.navlink:hover{color:var(--verde);}
+  .btn{display:inline-block; padding:12px 26px; border-radius:100px; font-size:0.92rem; transition:opacity .2s ease;}
+  .btn-primary{background:var(--verde); color:#fff;}
+  .btn-primary:hover{opacity:0.88;}
+  .btn-outline{background:transparent; border:1px solid var(--verde); color:var(--verde);}
+  .btn-outline:hover{background:var(--verde); color:#fff;}
+  .menu-btn{display:none; background:none; border:0; font-size:1.6rem; color:var(--verde); cursor:pointer;}
+  #mobileMenu{display:none;}
+  @media (max-width:900px){
+    nav#desktopNav{display:none;}
+    .menu-btn{display:block;}
+    #mobileMenu.open{display:block; background:var(--hueso); border-top:1px solid var(--linea); padding:20px 32px 28px;}
+    #mobileMenu ul{list-style:none; display:flex; flex-direction:column; gap:18px;}
+    #mobileMenu .btn{margin-top:8px; text-align:center;}
+  }
+
+  .hero{background:#DBEFE7; padding:60px 0 76px;}
+  .hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;}
+  .eyebrow{font-size:0.78rem; letter-spacing:0.08em; color:var(--verde); font-weight:500; margin-bottom:18px;}
+  .hero h1{font-size:clamp(2.4rem, 4.6vw, 3.5rem); margin-bottom:22px;}
+  .hero h1 em{font-style:normal; color:var(--verde);}
+  .hero p.lead{font-size:1.06rem; max-width:44ch; margin-bottom:26px; color:#3c4a45;}
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:28px;}
+  .hero-note{grid-column:1/-1; display:flex; gap:32px; flex-wrap:wrap; font-size:0.86rem; color:#3c4a45; border-top:1px solid rgba(0,91,76,0.2); padding-top:18px; margin-top:8px;}
+  .hero-note span{padding-left:16px; border-left:2px solid var(--rosa);}
+  .hero-note span:first-child{padding-left:0; border-left:0;}
+  .hero-photo{position:relative;}
+  .hero-photo .frame{aspect-ratio:4/5; background:var(--turq-4); border-radius:200px 200px 24px 24px; overflow:hidden; box-shadow:0 20px 50px rgba(0,91,76,0.12);}
+  .hero-photo img{width:100%; height:100%; object-fit:cover;}
+  .quote-chip{position:absolute; bottom:-24px; left:-24px; background:#fff; padding:20px 22px; border-radius:10px; box-shadow:0 14px 40px rgba(0,60,45,0.14); max-width:280px; font-size:0.95rem;}
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .quote-chip{position:static; margin-top:20px; max-width:none;}
+  }
+
+  section{padding:84px 0;}
+  .section-crema{background:var(--crema);}
+  .section-hueso{background:var(--hueso);}
+  .section-verde{background:var(--verde); color:#fff;}
+  .section-verde h2{color:#fff;}
+  .section-menta{background:#DBEFE7; color:var(--verde);}
+  .section-menta h2{color:var(--verde);}
+
+  .two-col{display:grid; grid-template-columns:1fr 1.2fr; gap:60px; align-items:start;}
+  @media (max-width:860px){.two-col{grid-template-columns:1fr;}}
+  .two-col h2{font-size:clamp(1.9rem,3.4vw,2.5rem);}
+  .callout{border-left:3px solid var(--turq-4); background:#fff; padding:22px 26px; border-radius:6px; font-size:1rem; margin-top:22px;}
+  .callout strong{color:var(--verde);}
+
+  .section-head{max-width:640px; margin-bottom:48px;}
+  .section-head h2{font-size:clamp(2rem,3.6vw,2.7rem); margin-bottom:14px;}
+  .section-head p{color:#4a4948; font-size:1.02rem;}
+
+  .cards{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+  @media (max-width:800px){.cards{grid-template-columns:1fr;}}
+  .card{background:#fff; border-radius:16px; padding:34px 32px; position:relative; overflow:hidden; border:1px solid var(--linea);}
+  .card::after{content:""; position:absolute; top:-30px; right:-30px; width:100px; height:100px; background:var(--turq-1); opacity:0.8; border-radius:50%;}
+  .card .num{font-family:'Cormorant Garamond',serif; color:var(--turq-4); font-size:1rem; font-weight:600; position:relative;}
+  .card h3{font-size:1.5rem; margin:10px 0 12px; position:relative;}
+  .card p{color:#4a4948; margin-bottom:16px; position:relative; font-size:0.94rem;}
+  .card ul{list-style:none; margin-bottom:18px; position:relative;}
+  .card ul li{font-size:0.92rem; padding:5px 0 5px 18px; position:relative; color:#4a4948;}
+  .card ul li::before{content:"—"; position:absolute; left:0; color:var(--turq-4);}
+  .card .cta-link{color:var(--verde); font-weight:500; font-size:0.94rem; position:relative;}
+
+  .work-grid{display:grid; grid-template-columns:1.2fr 0.8fr; gap:56px; align-items:center;}
+  @media (max-width:860px){.work-grid{grid-template-columns:1fr;}}
+  .principios{display:flex; flex-direction:column;}
+  .principio{padding:22px 0; border-bottom:1px solid rgba(255,255,255,0.18);}
+  .principio:first-child{padding-top:0;}
+  .principio:last-child{border-bottom:none;}
+  .principio h3{color:var(--turq-4); font-family:'Jost',sans-serif; font-weight:500; font-size:1.05rem; margin-bottom:8px;}
+  .principio p{color:rgba(255,255,255,0.82); font-size:0.96rem;}
+  .quote-box{background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.2); border-radius:16px; padding:40px; align-self:center;}
+  .quote-box p.quote{font-family:'Cormorant Garamond',serif; font-style:italic; color:#fff; font-size:1.45rem; line-height:1.4; margin-bottom:20px;}
+  .quote-box .who{color:var(--turq-4); font-size:0.88rem; letter-spacing:0.04em;}
+
+  .rutas{display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--linea); border-radius:16px; overflow:hidden; background:#fff;}
+  @media (max-width:860px){.rutas{grid-template-columns:1fr 1fr;}}
+  .ruta{padding:30px 26px; border-right:1px solid var(--linea);}
+  .ruta:last-child{border-right:0;}
+  .ruta .num{color:var(--turq-4); font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600;}
+  .ruta h3{font-size:1.2rem; margin:8px 0 8px;}
+  .ruta p{font-size:0.9rem; color:#4a4948;}
+  .banda{margin-top:22px; background:var(--turq-2); color:var(--verde); padding:20px 28px; border-radius:12px; font-size:0.95rem;}
+
+  .pasos{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  @media (max-width:860px){.pasos{grid-template-columns:1fr 1fr;}}
+  .paso{background:#fff; border-radius:14px; padding:28px 24px; border:1px solid var(--linea);}
+  .paso .n{width:34px; height:34px; border-radius:50%; background:var(--turq-2); color:var(--verde); display:flex; align-items:center; justify-content:center; font-weight:600; margin-bottom:16px;}
+  .paso h3{font-size:1.12rem; margin-bottom:8px;}
+  .paso p{font-size:0.9rem; color:#4a4948;}
+
+  .sobremi{display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:center;}
+  @media (max-width:860px){.sobremi{grid-template-columns:1fr;}}
+  .sobremi .foto{aspect-ratio:4/5; background:#fff; border-radius:14px; overflow:hidden;}
+  .authority-line{margin-top:18px; background:rgba(0,91,76,0.06); border-radius:12px; padding:14px 18px; font-size:0.9rem; display:flex; gap:10px; align-items:flex-start;}
+  .authority-line .dot{width:8px; height:8px; border-radius:50%; background:var(--turq-4); margin-top:6px; flex-shrink:0;}
+  .stats{display:flex; gap:34px; margin-top:24px; flex-wrap:wrap;}
+  .stat b{display:block; font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--verde);}
+  .stat span{font-size:0.85rem; color:#4a4948;}
+
+  .reconoces-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:860px){.reconoces-grid{grid-template-columns:1fr;}}
+  .reconoce-card{background:#fff; border-top:3px solid var(--turq-4); border-radius:4px; padding:26px 24px; box-shadow:0 2px 10px rgba(0,0,0,0.04);}
+  .reconoce-card h3{font-family:'Jost',sans-serif; font-weight:600; color:#232323; font-size:1.05rem; margin-bottom:10px;}
+  .reconoce-card p{font-size:0.92rem; color:#4a4948;}
+
+  .formacion-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px; align-items:center;}
+  @media (max-width:860px){.formacion-grid{grid-template-columns:1fr;}}
+  .formacion-photos{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .formacion-photos .wide{grid-column:1/3; border-radius:10px; overflow:hidden; aspect-ratio:16/9;}
+  .formacion-photos .small{border-radius:10px; overflow:hidden; aspect-ratio:1/1;}
+  .formacion-photos img{width:100%; height:100%; object-fit:cover; display:block;}
+  .checklist{list-style:none; margin:20px 0 24px;}
+  .checklist li{padding:8px 0 8px 28px; position:relative; font-size:0.96rem; color:#3c4a45;}
+  .checklist li::before{content:"✓"; position:absolute; left:0; color:var(--verde); font-weight:600;}
+
+  .leadmagnet{display:grid; grid-template-columns:1.2fr 0.8fr; gap:40px; align-items:center; background:#fff; border-radius:20px; padding:44px; border:1px solid var(--linea);}
+  @media (max-width:860px){.leadmagnet{grid-template-columns:1fr;}}
+  .lm-card{background:var(--crema); border-radius:16px; padding:34px; text-align:center;}
+  .lm-card .tag{font-size:0.72rem; letter-spacing:0.1em; color:var(--verde); margin-bottom:10px;}
+  .lm-card h4{font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--verde);}
+
+  .faq-item{border-bottom:1px solid var(--linea);}
+  .faq-item summary{padding:20px 4px; cursor:pointer; font-size:1.02rem; display:flex; justify-content:space-between; align-items:center; list-style:none;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+"; font-size:1.4rem; color:var(--verde);}
+  .faq-item[open] summary::after{content:"–";}
+  .faq-item p{padding:0 4px 20px; color:#4a4948; font-size:0.96rem;}
+
+  .contacto{text-align:center;}
+  .contacto h2{color:#fff; font-size:clamp(2rem,3.8vw,2.8rem); max-width:760px; margin:0 auto 16px;}
+  .contacto p{color:rgba(255,255,255,0.85); max-width:600px; margin:0 auto 30px;}
+  .contacto .ctas{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+  .contacto small{display:block; margin-top:26px; color:rgba(255,255,255,0.6);}
+
+  footer{background:#0f2c26; color:rgba(255,255,255,0.75); padding:56px 0 24px; font-size:0.92rem;}
+  .foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:40px; margin-bottom:36px;}
+  @media (max-width:700px){.foot-grid{grid-template-columns:1fr;}}
+  footer h4{color:#fff; font-family:'Jost',sans-serif; font-weight:500; margin-bottom:14px; font-size:0.95rem;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:8px;}
+  footer a:hover{color:#fff;}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,0.12); padding-top:22px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:0.82rem;}
+
+  .whatsapp-fab{position:fixed; bottom:22px; right:22px; background:var(--verde); color:#fff; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,0.25); z-index:60;}
+
+  .lm-form{display:flex; flex-wrap:wrap; gap:12px; margin-top:20px;}
+  .lm-form input{flex:1 1 180px; padding:12px 18px; border:1px solid var(--linea); border-radius:100px; font-family:'Jost',sans-serif; font-size:0.92rem; background:#fff; color:var(--carbon);}
+  .lm-form input:focus{outline:none; border-color:var(--turq-4);}
+  .lm-form button.btn{flex:0 0 auto; border:none; cursor:pointer; font-family:'Jost',sans-serif;}
+  .lm-note{margin-top:10px; font-size:0.8rem; color:#8a8a87;}
+
+  .cookie-banner{position:fixed; bottom:0; left:0; right:0; background:#0f2c26; color:#fff; padding:20px 24px; z-index:100; display:none; box-shadow:0 -6px 24px rgba(0,0,0,0.18);}
+  .cookie-banner.show{display:block;}
+  .cookie-inner{max-width:1180px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;}
+  .cookie-inner p{font-size:0.86rem; color:rgba(255,255,255,0.85); max-width:640px;}
+  .cookie-inner a{text-decoration:underline;}
+  .cookie-actions{display:flex; gap:12px; flex-wrap:wrap; flex-shrink:0;}
+  .cookie-actions button{border:none; cursor:pointer; font-family:'Jost',sans-serif; padding:10px 22px; border-radius:100px; font-size:0.86rem;}
+  .cookie-actions .cookie-accept{background:var(--turq-4); color:#0f2c26; font-weight:500;}
+  .cookie-actions .cookie-reject{background:transparent; border:1px solid rgba(255,255,255,0.4); color:#fff;}
+</style>
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2634215');
+</script>
+<!-- End MailerLite Universal -->
+</head>
+<body>
+
+<header>
+  <div class="nav-inner-simple">
+    <a class="back" href="https://www.anaballestergarcia.com/">&larr; Volver a la web</a>
+    <div class="brand-name" style="font-size:1.15rem;">Ana Ballester García</div>
+  </div>
+</header>
+
+<section class="section-hueso" style="padding-top:64px; padding-bottom:64px;">
+  <div class="wrap" style="max-width:900px;">
+    <div class="eyebrow" style="text-align:center;">TALLERES Y FORMACIONES</div>
+    <h1 style="text-align:center; font-size:clamp(2rem,4vw,2.8rem); margin-bottom:18px;">Reserva tu plaza</h1>
+    <p style="text-align:center; max-width:60ch; margin:0 auto; color:#4a4948; font-size:1.02rem;">Completa tus datos para reservar tu plaza en el próximo taller o formación de Justicia Sistémica. Consulta las fechas disponibles en el <a href="calendario.html" style="color:var(--verde); text-decoration:underline;" target="_blank" rel="noopener">calendario</a> antes de registrarte.</p>
+
+    <div class="leadmagnet" style="margin-top:48px;">
+      <div>
+        <div class="eyebrow">COMPLETA TUS DATOS</div>
+        <div class="ml-embedded" data-form="gDpb4h"></div>
+        <p class="lm-note">Al reservar recibirás también, en tu email, la guía "Justicia Sistémica: del combate al acompañamiento". Puedes darte de baja cuando quieras.</p>
+        <p style="margin-top:18px; font-size:0.8rem; color:#8a8a87;">Ana Ballester García es la responsable de tus datos; MailerLite los trata como encargada del envío. Puedes ejercer tus derechos escribiendo a <a href="mailto:contacto@anaballestergarcia.com" style="text-decoration:underline;">contacto@anaballestergarcia.com</a> — más info en la <a href="legal/privacidad.html" style="text-decoration:underline;">política de privacidad</a>.</p>
+      </div>
+      <div class="lm-card">
+        <div class="tag">PLAZAS LIMITADAS</div>
+        <h4>Justicia Sistémica</h4>
+        <p style="margin-top:8px; font-size:0.9rem;">Talleres y formaciones para abogados, mediadores y profesionales de la ayuda</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem;">Ana Ballester García</h4>
+        <p style="margin-top:8px; max-width:32ch; color:rgba(255,255,255,0.65);">Abogada · Mediadora · Especialista en resolución de conflictos familiares.<br>Mediación Ballester</p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="index.html#servicios">Derecho de familia</a></li>
+          <li><a href="index.html#servicios">Mediación y MASC</a></li>
+          <li><a href="index.html#servicios">Herencias</a></li>
+          <li><a href="index.html#servicios">Conflictos complejos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Despacho</h4>
+        <ul>
+          <li><a href="index.html#formacion">Formación</a></li>
+          <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+          <li><a href="legal/aviso-legal.html">Aviso legal</a></li>
+          <li><a href="legal/privacidad.html">Privacidad y cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Ana Ballester García · Mediación Ballester</span>
+      <span>Avenida Enric Valor nº 3, Burjassot, Valencia</span>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/34637557030" aria-label="Escribir por WhatsApp">💬</a>
+
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-inner">
+    <p>Usamos cookies propias y de terceros para el funcionamiento de la web y para analizar la navegación. Puedes aceptarlas, rechazarlas o consultar más información en nuestra <a href="legal/privacidad.html">política de privacidad y cookies</a>.</p>
+    <div class="cookie-actions">
+      <button class="cookie-reject" id="cookieReject">Rechazar</button>
+      <button class="cookie-accept" id="cookieAccept">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var banner = document.getElementById('cookieBanner');
+    var consent = localStorage.getItem('cookieConsent');
+    if(!consent){ banner.classList.add('show'); }
+    document.getElementById('cookieAccept').addEventListener('click', function(){
+      localStorage.setItem('cookieConsent', 'accepted');
+      banner.classList.remove('show');
+    });
+    document.getElementById('cookieReject').addEventListener('click', function(){
+      localStorage.setItem('cookieConsent', 'rejected');
+      banner.classList.remove('show');
+    });
+  })();
+</script>
+</body>
+</html>
