@@ -290,6 +290,28 @@
 </div>
 
 <script>
+  /* Quita el texto de ejemplo (p. ej. "Ej.: 24 de noviembre") que el formulario de MailerLite pone en sus campos */
+  (function(){
+    var box = document.querySelector('.ml-embedded');
+    if(!box) return;
+    var EJ = /\s*\(?\s*(ejemplo|ej)\s*[.:]+\s*[^)\n]*\)?/i;
+    function limpiar(){
+      box.querySelectorAll('input, textarea').forEach(function(el){
+        var p = el.getAttribute('placeholder') || '';
+        if(/ejemplo|ej\s*[.:]|noviembre|\d/i.test(p)) el.setAttribute('placeholder', '');
+      });
+      var w = document.createTreeWalker(box, NodeFilter.SHOW_TEXT, null), n;
+      while((n = w.nextNode())){
+        if(/(^|\W)(ejemplo|ej)\s*[.:]/i.test(n.nodeValue)){
+          n.nodeValue = n.nodeValue.replace(EJ, '').trim();
+        }
+      }
+    }
+    new MutationObserver(limpiar).observe(box, {childList:true, subtree:true});
+    limpiar();
+  })();
+</script>
+<script>
   (function(){
     var banner = document.getElementById('cookieBanner');
     var consent = localStorage.getItem('cookieConsent');
