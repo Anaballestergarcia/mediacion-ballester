@@ -202,15 +202,7 @@
   .cookie-actions .cookie-accept{background:var(--turq-4); color:#0f2c26; font-weight:500;}
   .cookie-actions .cookie-reject{background:transparent; border:1px solid rgba(255,255,255,0.4); color:#fff;}
 </style>
-<!-- MailerLite Universal -->
-<script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '2634215');
-</script>
-<!-- End MailerLite Universal -->
+
 </head>
 <body>
 
@@ -230,9 +222,30 @@
     <div class="leadmagnet" style="margin-top:48px;">
       <div>
         <div class="eyebrow">COMPLETA TUS DATOS</div>
-        <div class="ml-embedded" data-form="gDpb4h"></div>
+        <div class="form-membersfy">
+          <iframe
+            src="https://crmapi.membersfy.com/widget/form/18BTo28TFLKIhstoihIQ"
+            style="width:100%;height:1013px;border:none;border-radius:8px"
+            id="inline-18BTo28TFLKIhstoihIQ"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Registro Taller  Basico 1"
+            data-height="1013"
+            data-layout-iframe-id="inline-18BTo28TFLKIhstoihIQ"
+            data-form-id="18BTo28TFLKIhstoihIQ"
+            data-cookie-consent="true"
+            data-cookie-consent-provider="auto"
+            title="Registro Taller  Basico 1">
+          </iframe>
+          <script src="https://crmapi.membersfy.com/js/form_embed.js"></script>
+        </div>
         <p class="lm-note">Al reservar recibirás también, en tu email, la guía "Del combate al acompañamiento". Puedes darte de baja cuando quieras.</p>
-        <p style="margin-top:18px; font-size:0.8rem; color:#8a8a87;">Ana Ballester García es la responsable de tus datos; MailerLite los trata como encargada del envío. Puedes ejercer tus derechos escribiendo a <a href="mailto:contacto@anaballestergarcia.com" style="text-decoration:underline;">contacto@anaballestergarcia.com</a> — más info en la <a href="legal/privacidad.html" style="text-decoration:underline;">política de privacidad</a>.</p>
+        <p style="margin-top:18px; font-size:0.8rem; color:#8a8a87;">Ana Ballester García es la responsable de tus datos; Membersfy los trata como encargada del tratamiento. Puedes ejercer tus derechos escribiendo a <a href="mailto:contacto@anaballestergarcia.com" style="text-decoration:underline;">contacto@anaballestergarcia.com</a> — más info en la <a href="legal/privacidad.html" style="text-decoration:underline;">política de privacidad</a>.</p>
       </div>
       <div class="lm-card">
         <div class="tag">PLAZAS LIMITADAS</div>
@@ -289,28 +302,6 @@
   </div>
 </div>
 
-<script>
-  /* Quita el texto de ejemplo (p. ej. "Ej.: 24 de noviembre") que el formulario de MailerLite pone en sus campos */
-  (function(){
-    var box = document.querySelector('.ml-embedded');
-    if(!box) return;
-    var EJ = /\s*\(?\s*(ejemplo|ej)\s*[.:]+\s*[^)\n]*\)?/i;
-    function limpiar(){
-      box.querySelectorAll('input, textarea').forEach(function(el){
-        var p = el.getAttribute('placeholder') || '';
-        if(/ejemplo|ej\s*[.:]|noviembre|\d/i.test(p)) el.setAttribute('placeholder', '');
-      });
-      var w = document.createTreeWalker(box, NodeFilter.SHOW_TEXT, null), n;
-      while((n = w.nextNode())){
-        if(/(^|\W)(ejemplo|ej)\s*[.:]/i.test(n.nodeValue)){
-          n.nodeValue = n.nodeValue.replace(EJ, '').trim();
-        }
-      }
-    }
-    new MutationObserver(limpiar).observe(box, {childList:true, subtree:true});
-    limpiar();
-  })();
-</script>
 <script>
   (function(){
     var banner = document.getElementById('cookieBanner');
